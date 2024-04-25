@@ -2,6 +2,9 @@
 This repository is a class example used to gain
 experience with source control and TypeScript.
 
+## Website
+To go onto the CPWBookstore website, click [here](https://bmitzel88.github.io/CPWBookstore/)!
+
 ## Getting started
 
 ### Installing TypeScript
