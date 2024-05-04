@@ -52,7 +52,7 @@ function getBook():Book {
     let isbnTextBox = document.querySelector("#isbn") as HTMLInputElement;
     let titleTextBox = document.querySelector("#title") as HTMLInputElement;
     let priceTextBox = document.querySelector("#price") as HTMLInputElement;
-    let dateTextBox = document.querySelector("#release-date") as HTMLInputElement;
+    let releaseDateTextBox = document.querySelector("#release-date") as HTMLInputElement;
 
     // Validate data
     let isValidData = true;
@@ -79,6 +79,15 @@ function getBook():Book {
         isValidData = false;
         priceTextBox.nextElementSibling.textContent = "Price must be a positive number"
     }
+
+    // Validate release date
+    let releaseDate = releaseDateTextBox.value;
+    let releaseDateCheck = Date.parse(releaseDate); // If this is invalid it will return NaN
+    if (isNaN(releaseDateCheck)) {
+        isValidData = false;
+        releaseDateTextBox.nextElementSibling.textContent = "Release date must be a valid date";
+    }
+
 }
 
 /**
