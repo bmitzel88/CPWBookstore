@@ -20,6 +20,7 @@ function processBook() {
     }
 }
 function getBook() {
+    clearAllErrorMessages();
     let isbnTextBox = document.querySelector("#isbn");
     let titleTextBox = document.querySelector("#title");
     let priceTextBox = document.querySelector("#price");
@@ -53,4 +54,10 @@ function isValidIsbn(data) {
     return regex.test(data);
 }
 function addBook(b) {
+}
+function clearAllErrorMessages() {
+    let allSpans = document.querySelectorAll("form span.error-msg");
+    for (let i = 0; i < allSpans.length; i++) {
+        allSpans[i].textContent = "";
+    }
 }
