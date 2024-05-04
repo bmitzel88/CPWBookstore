@@ -65,7 +65,20 @@ function getBook():Book {
 
     }
 
-    
+    // Validate title
+    let title:string = titleTextBox.value;
+    if (title.trim() == "") {
+        isValidData = false;
+        let titleErrorSpan = titleTextBox 
+        titleErrorSpan.textContent = "You must provide a book title"
+    }
+
+    //Validate price
+    let price = parseFloat(priceTextBox.value);
+    if (isNaN(price) || price < 0) {
+        isValidData = false;
+        priceTextBox.nextElementSibling.textContent = "Price must be a positive number"
+    }
 }
 
 /**
